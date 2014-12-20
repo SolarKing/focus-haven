@@ -1,0 +1,52 @@
+.icon {
+	font-family: "IcoMoon";
+	padding:8px;
+	&-menu:before {
+		content: "\e9bd";
+	}
+	&-home:before {
+		content: "\e900";
+	}
+	&-pencil:before {
+		content: "\e905";
+	}
+	&-quill:before {
+		content: "\e907";
+	}
+	&-stack:before {
+		content: "\e92e";
+	}
+	&-price-tag:before {
+		content: "\e935";
+	}
+	&-price-tags:before {
+		content: "\e936";
+	}
+	&-clock:before {
+		content: "\e94e";
+	}
+	&-stopwatch:before {
+		content: "\e952";
+	}
+	&-calendar:before {
+		content: "\e953";
+	}
+	&-drawer:before {
+		content: "\e95c";
+	}
+	&-drawer2:before {
+		content: "\e95d";
+	}
+	&-download:before {
+		content: "\e960";
+	}
+	&-upload:before {
+		content: "\e961";
+	}
+	&-floppy-disk:before {
+		content: "\e962";
+	}
+	&-cog:before {
+		content: "\e994";
+	}
+}

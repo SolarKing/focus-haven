@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Focus Haven</title>
+	<link rel="stylesheet" href="css/normalize.css">
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+	<!-- Application Template -->
+	<script type="text/x-handlebars">
+		<nav class="f-navbar">
+			<div class='f-time-container'>
+				<div class='f-time'>04:00 PM</div>
+			</div>
+			<div class="f-brand f-left">
+				{{#link-to 'index'}}
+					Focus Haven
+				{{/link-to}}
+			</div>
+			<div id='f-navbar-menu'class='f-right'>
+			{{focus-select
+				name=""
+				logo="icon icon-menu"
+				showChoices=false
+				choices=model.choices
+			}}
+			</div>
+		</nav>
+		<main id='f-main'>
+			{{outlet}}
+		</main>
+	</script>
+
+	<!-- Index Template -->
+	<script type="text/x-handlebars" data-template-name="index">
+		Component Test
+		{{focus-select
+			name=""
+			logo="icon icon-menu"
+			showChoices=false
+			choices=model.choices
+		}}
+	</script>
+
+	<!-- Tasks Template -->
+	<script type="text/x-handlebars" data-template-name="tasks">
+		{{#each card in model}}
+			<div class="f-card">
+				{{card.group}}<br>
+				{{card.kind}}<br>
+				{{card.body}}<br>
+				{{card.dueDate}}<br>
+				{{card.isCompleted}}
+			</div>
+		{{/each}}
+	</script>
+
+	<!-- Settings Template -->
+	<script type="text/x-handlebars" data-template-name="settings">
+		Settings
+	</script>
+
+	<!-- Components -->
+
+	<!-- focus select -->
+	<script type="text/x-handlebars" data-template-name="components/focus-select">
+		<div class='f-dropdown'>
+		<button class='f-dropdown-button' {{action "showChoices"}}>
+			<span {{bind-attr class=logo}}></span>
+			{{name}}
+		</button>
+		{{#if isShowingChoices}}
+			<div class="f-dropdown-body">	
+				{{#each item in choices}}
+					{{#link-to
+						item.templateName
+						tagName='a'
+						classNames='f-dropdown-choice'
+					}}
+						<span {{bind-attr class=item.logo}}>
+						</span>
+						{{item.choice}}
+					{{/link-to}}
+				{{/each}}
+			</div>
+		{{/if}}
+		</div>
+	</script>
+
+	<script src="js/libs/jquery-1.10.2.js"></script>
+	<script src="js/libs/handlebars-v2.0.0.js"></script>
+	<script src="js/libs/ember-1.9.0.js"></script>
+	<script src="js/libs/ember-data.js"></script>
+	<script src="js/app.js"></script>
+	<!-- to activate the test runner, add the "?test" query string parameter -->
+	<script src="tests/runner.js"></script>
+</body>
+</html>
