@@ -3,7 +3,6 @@
 	width:100%;
 	max-width:800px;
 	min-height: 600px;
-	border:black thin solid;
 	margin: 0 auto;
 	position: relative;
 }
@@ -12,7 +11,7 @@
 	width:200px;
 	height:40px;
 	text-align:center;
-	font-weight:bold;
+	font-weight:normal;
 	margin: 0 auto;
 	position: absolute;
 	right:50%;
@@ -32,4 +31,26 @@
 #f-navbar-menu {
 	margin-top:7px;
 	margin-right:2px;
+}
+
+#focus-brand {
+	a {
+		text-decoration: none;
+		color:black;
+	}
+}
+
+#f-cards {
+	width:500px;
+	float:left;
+}
+
+#f-card-control {
+	width:260px;
+	margin-left: 540px;
+	position: fixed;
+	min-height:100px;
+	background:white;
+	@include smartShadow(1);
+
 }
