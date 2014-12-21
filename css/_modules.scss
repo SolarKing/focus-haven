@@ -6,23 +6,6 @@
 	background:white;
 }
 
-@mixin smartShadow($level: 1){
-    @if ($level == 1) {
-        box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-    }
-    @if ($level == 2) {
-        box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-    }
-    @if ($level == 3) {
-        box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
-    }
-    @if ($level == 4) {
-        box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
-    }
-    @if ($level == 5) {
-        box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
-    }
-}
 
 .f-d1 {
 	@include smartShadow(1);
@@ -56,12 +39,14 @@
 .f-navbar {
 	height: 40px;
 	width:100%;
-	background: #26C6DA;
+	background: #AFDFDB;
+	background-image: url("/assets/imgs/ember-background-green.png");
 	position: fixed;
 	top:0;
 	left:0;
 	font-size:18px;
 	z-index:100;
+	color:black;
 	@include smartShadow(2);
 }
 
@@ -95,6 +80,7 @@
 .f-dropdown-button {
 	background:none;
 	border:none;
+	color:black;
 }
 
 
@@ -104,7 +90,7 @@
 	width:140px;
 	// border-left: 3px white solid;
 	&:link {
-		color:#333;
+		color:#777;
 		text-decoration:none;
 	}
 	&:hover {
@@ -123,7 +109,44 @@
 
 }
 
-
-
+// focus cards
+.f-card {
+	width:100%;
+	height:auto;
+	background:white;
+	margin-bottom:40px;
+	padding:0;
+	@include smartShadow(1);
+	&-header {
+		width:100%;
+		height:40px;
+		background:#D0DF7D;
+		padding:10px;
+		box-sizing:border-box;
+		text-transform: uppercase;
+		font-weight: bold;
+	}
+	&-body {
+		width: 100%;
+		min-height: 80px;
+		background:white;
+		padding:10px;
+		box-sizing:border-box;
+	}
+	&-footer {
+		width:100%;
+		height:80px;
+		border-top:thin solid #efefef;
+		padding:10px;
+		box-sizing:border-box;
+	}
+	&-kind {
+		color: #EEF4CC;
+		margin-right:5px;
+	}
+	&-days {
+		float:right;
+	}
+}
 
 
