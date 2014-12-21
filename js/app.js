@@ -68,6 +68,12 @@ App.ApplicationRoute = Ember.Route.extend({
 
 // CONTROLLERS
 
+App.TasksController = Ember.ArrayController.extend({
+	daysLeft: function() {
+		var diff = 0;
+		return diff;
+	}.property()
+});
 
 // OBJECTS
 App.Choices = Ember.Object.extend({
@@ -112,7 +118,7 @@ App.Tasks.reopenClass({
 		{
 			id:1,
 			group: "something",
-			kind: "something",
+			kind: "hmwk",
 			body: "something",
 			dueDate: (new Date()),
 			isCompleted: false
@@ -120,7 +126,39 @@ App.Tasks.reopenClass({
 		{
 			id:2,
 			group: "something",
-			kind: "something",
+			kind: "hmwk",
+			body: "truebody",
+			dueDate: (new Date()),
+			isCompleted: true
+		},
+		{
+			id:3,
+			group: "something",
+			kind: "hmwk",
+			body: "something",
+			dueDate: (new Date()),
+			isCompleted: false
+		},
+		{
+			id:4,
+			group: "something",
+			kind: "hmwk",
+			body: "truebody",
+			dueDate: (new Date()),
+			isCompleted: true
+		},
+		{
+			id:5,
+			group: "something",
+			kind: "hmwk",
+			body: "something",
+			dueDate: (new Date()),
+			isCompleted: false
+		},
+		{
+			id:6,
+			group: "something",
+			kind: "hmwk",
 			body: "truebody",
 			dueDate: (new Date()),
 			isCompleted: true
