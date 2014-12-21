@@ -13,7 +13,7 @@
 			<div class='f-time-container'>
 				<div class='f-time'>04:00 PM</div>
 			</div>
-			<div class="f-brand f-left">
+			<div id="focus-brand"class="f-brand f-left">
 				{{#link-to 'index'}}
 					Focus Haven
 				{{/link-to}}
@@ -45,15 +45,33 @@
 
 	<!-- Tasks Template -->
 	<script type="text/x-handlebars" data-template-name="tasks">
+		<div id='f-cards'>
 		{{#each card in model}}
 			<div class="f-card">
-				{{card.group}}<br>
-				{{card.kind}}<br>
-				{{card.body}}<br>
-				{{card.dueDate}}<br>
-				{{card.isCompleted}}
+				<header class="f-card-header">
+					<span class='f-card-kind'>
+						{{card.kind}}
+					</span>
+					<span>
+						{{card.group}}
+					</span>
+					<span class='f-card-days'>
+						Due in 3 days
+					</span>
+				</header>
+				<div class="f-card-body">
+					{{card.body}}<br>
+					{{card.dueDate}}<br>
+					
+				</div>
+				<div class="f-card-footer">
+					{{card.isCompleted}}
+				</div>
 			</div>
 		{{/each}}
+		</div>
+		<div id="f-card-control">
+		</div>
 	</script>
 
 	<!-- Settings Template -->
